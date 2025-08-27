@@ -35,7 +35,53 @@
 
   ## sudo /opt/lampp/lampp restart
 
-  - path
+  - path you project and type code .
+
+  ## Setting up your .env , copy env.example and rename it to .env 
+
+    ### Config .env file
+
+   -DB_CONNECTION=mysql //change mysql from sqlite
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE= <createddbname> // change what db name in php my admin
+    DB_USERNAME=<your username> 
+    DB_PASSWORD= <your password>
+
+    ### config/database.php
+
+    -'mysql' => [
+    'driver' => 'mysql',
+    'url' => env('DB_URL'),
+    'host' => env('DB_HOST', '127.0.0.1'),
+    'port' => env('DB_PORT', '3306'),
+    'database' => env('DB_DATABASE', '<createddbname>'), 
+    'username' => env('DB_USERNAME', '<your username if not default is root>'),
+    'password' => env('<your password>', ''),
+    'unix_socket' => env('DB_SOCKET', ''),
+    'charset' => env('DB_CHARSET', 'utf8mb4'),
+    'collation' => env('DB_COLLATION', 'utf8mb4_general_ci'),<<< change general from unicode >>>
+    'prefix' => '',
+    'prefix_indexes' => true,
+    'strict' => true,
+    'engine' => null,
+    'options' => extension_loaded('pdo_mysql') ? array_filter([
+    PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+    ]) : [],
+    ],
+
+ ## php artisan migrate
+
+ ## php artisan key:generate
+
+ ## php artisan serve 
+
+ ## php artisan serve --host=ip address --port=portnumber
+
+
+
+
+
 
 
 
