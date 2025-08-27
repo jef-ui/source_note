@@ -1,8 +1,8 @@
-# Setting Up Laravel _ Ubuntu Linux Operationg System
+#####Setting Up Laravel _ Ubuntu Linux Operationg System
 
 - Install xampp, composer, nodejs and php
 
-## sudo composer create-project laravel/laravel myapp
+###### sudo composer create-project laravel/laravel myapp
  - track your path first opt/lampp/htdocs/ + command
 
 ## sudo chown -R <username>:<username> /opt/lampp/htdocs/<projectname>/
