@@ -2,7 +2,7 @@
 
 cd /opt/lamp/htdocs/
 
->>sudo git clone <https_code_repo_project_url> note: this command is from your repo project in your github profile
+>>sudo git clone <https_code_repo_project_url> note: this command is from your repo project in your github profile (https)
 
 >> open the folder repo and code . (to open vs code)
 
