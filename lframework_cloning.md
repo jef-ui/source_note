@@ -26,4 +26,4 @@ cd /opt/lamp/htdocs/
 
 >>git config --global user.name "your.name"
 
->>git remote set-url origin https://<token>@github.com/<user.name>/<repo.name>
+>>git remote set-url origin https://token@github.com/<user.name>/<repo.name>
