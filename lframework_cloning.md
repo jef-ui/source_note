@@ -21,3 +21,7 @@ cd /opt/lamp/htdocs/
 >>npm run build
 
 >>php artisan serve
+
+>>git config --global user.email "your-email"
+
+>>git config --global user.name "your.name"
