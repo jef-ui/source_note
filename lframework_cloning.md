@@ -24,8 +24,8 @@ cd /opt/lamp/htdocs/
 
 >>git config --list (if none proceed to git config)
 
--git config --global user.email "your-email"
+- git config --global user.email "your-email"
 
--git config --global user.name "your.name"
+- git config --global user.name "your.name"
 
 >>git remote set-url origin https://token@github.com/<user.name>/<repo.name>
