@@ -10,6 +10,8 @@ cd /opt/lamp/htdocs/
 
 >>if you can't save it type this command (sudo chown -R USERNAME:USERNAME /opt/lampp/htdocs/projectname)
 
+##### **sudo chown -R user:user /opt/lampp/htdocs/myproject**
+
 ##### **composer install**
 
 ##### **npm install**
