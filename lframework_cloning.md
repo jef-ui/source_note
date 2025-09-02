@@ -2,7 +2,7 @@
 
 cd /opt/lamp/htdocs/
 
->>sudo git clone <https_code_repo_project_url> note: this command is from your repo project in your github profile (https)
+##### **sudo git clone <https_code_repo_project_url> note: this command is from your repo project in your github profile (https)**
 
 >> open the folder repo and code . (to open vs code)
 
@@ -10,22 +10,27 @@ cd /opt/lamp/htdocs/
 
 >>if you can't save it type this command (sudo chown -R USERNAME:USERNAME /opt/lampp/htdocs/projectname)
 
->>composer install and npm install
+##### **composer install**
+
+##### **npm install**
+
+##### **npm run build**
 
 >>copy .env example and rename it to .env
 
->>php artisan migrate
+##### **php artisan migrate**
 
->>php artisan key:generate
+##### **php artisan key:generate**
 
->>npm run build
+##### **php artisan serve**
 
->>php artisan serve
 
->>git config --list (if none proceed to git config)
+### Configg allow to commit
 
-- git config --global user.email "your-email"
+##### **git config --list (if none proceed to git config)**
 
-- git config --global user.name "your.name"
+>>git config --global user.email "your-email"
 
->>git remote set-url origin https://token@github.com/<user.name>/<repo.name>
+>>git config --global user.name "your.name"
+
+##### **git remote set-url origin https://token@github.com/<user.name>/<repo.name>**
