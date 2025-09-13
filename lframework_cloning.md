@@ -14,7 +14,7 @@ cd /opt/lamp/htdocs/
 
 ##### **composer install**
 
-##### **npm install**
+###### **npm install**
 
 ##### **npm run build**
 
