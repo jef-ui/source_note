@@ -1,6 +1,31 @@
 ### Setting Up Laravel _ Ubuntu Linux Operationg System
 
->>- Install xampp, composer, nodejs and php
+>>- Install Xampp
+
+##### **sudo chmod 755 xampp-linux-x64-8.2.12-0-installer.run**
+
+##### **sudo ./xampp-linux-x64-8.2.12-0-installer.run**
+
+>>-config apache web server 80 → 81 , start | start mysql	
+>>-webbrowser → localhost:81 → phpmyadmin
+>>-Open/ run xampp : sudo /opt/lampp/manager-linux-x64.run 
+
+>>-Change password phpmy admin: 
+>>-sudo /opt/lampp/bin/mysql -u root
+>>-ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+>>-FLUSH PRIVILEGES;
+>>-EXIT;
+
+>>-Change password to match
+##### **/opt/lampp/phpmyadmin/config.inc.php**
+>>-Find this line and change it
+
+
+
+
+
+
+>>- After installing xampp, composer, nodejs and php
 
 ##### **sudo composer create-project laravel/laravel myapp**
 >>- track your path first opt/lampp/htdocs/ + command
@@ -26,11 +51,11 @@
 ##### **sudo nano /opt/lampp/etc/extra/httpd-vhosts.conf** 
 
 ##### **sudo nano /opt/lampp/etc/php.ini**
->>remove semi colon or enable
->>extension=php_pdo_mysql.dll
->>extension=php_pdo_sqlite.dll 
->>extension=php_sqlite3.dll 
->>search = ctrl + w
+>>-remove semi colon or enable
+>>-extension=php_pdo_mysql.dll
+>>-extension=php_pdo_sqlite.dll 
+>>-extension=php_sqlite3.dll 
+>>-search = ctrl + w
 
 ##### **sudo /opt/lampp/lampp restart**
 
@@ -41,32 +66,32 @@
 
 >> Config .env file
 
->>DB_CONNECTION=mysql //change mysql from sqlite
->>DB_HOST=127.0.0.1
->>DB_PORT=3306
->>DB_DATABASE= <createddbname> // change what db name in php my admin
->>DB_USERNAME=<your username> 
->>DB_PASSWORD= <your password>
+>>-DB_CONNECTION=mysql //change mysql from sqlite
+>>-DB_HOST=127.0.0.1
+>>-DB_PORT=3306
+>>-DB_DATABASE= <createddbname> // change what db name in php my admin
+>>-DB_USERNAME=<your username> 
+>>-DB_PASSWORD= <your password>
 
 >>config/database.php
 
->>'mysql' => 
->>'driver' => 'mysql',
->>'url' => env('DB_URL'),
->>'host' => env('DB_HOST', '127.0.0.1'),
->>'port' => env('DB_PORT', '3306'),
->>'database' => env('DB_DATABASE', '<createddbname>'), 
->>'username' => env('DB_USERNAME', '<your username if not default is root>'),
->>'password' => env('<your password>', ''),
->>'unix_socket' => env('DB_SOCKET', ''),
->>'charset' => env('DB_CHARSET', 'utf8mb4'),
->>'collation' => env('DB_COLLATION', 'utf8mb4_general_ci'),<<< change general from unicode >>>
->>'prefix' => '',
->>'prefix_indexes' => true,
->>'strict' => true,
->>'engine' => null,
->>'options' => extension_loaded('pdo_mysql') ? array_filter
->>PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+>>-'mysql' => 
+>>-'driver' => 'mysql',
+>>-'url' => env('DB_URL'),
+>>-'host' => env('DB_HOST', '127.0.0.1'),
+>>-'port' => env('DB_PORT', '3306'),
+>>-'database' => env('DB_DATABASE', '<createddbname>'), 
+>>-'username' => env('DB_USERNAME', '<your username if not default is root>'),
+>>-'password' => env('<your password>', ''),
+>>-'unix_socket' => env('DB_SOCKET', ''),
+>>-'charset' => env('DB_CHARSET', 'utf8mb4'),
+>>-'collation' => env('DB_COLLATION', 'utf8mb4_general_ci'),<<< change general from unicode >>>
+>>-'prefix' => '',
+>>-'prefix_indexes' => true,
+>>-'strict' => true,
+>>-'engine' => null,
+>>-'options' => extension_loaded('pdo_mysql') ? array_filter
+>>-PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
 
 ##### **php artisan migrate**
 
