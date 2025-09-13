@@ -1,0 +1,145 @@
+##XAMP##
+https://www.youtube.com/watch?v=lxNqjU81mbw
+https://www.apachefriends.org/
+
+>>sudo chmod 755 xampp-linux-x64-8.2.12-0-installer.run 
+>>sudo ./xampp-linux-x64-8.2.12-0-installer.run
+    config apache web server 80 → 81 , start | start mysql			
+    webbrowser → localhost:81 → phpmyadmin
+
+Open/ run xampp
+>>sudo /opt/lampp/manager-linux-x64.run 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##Change password phpmy admin## 
+
+>>sudo /opt/lampp/bin/mysql -u root
+>>ALTER USER 'root'@'localhost' IDENTIFIED BY '@kosij3fr1E0225';
+>>FLUSH PRIVILEGES;
+>>EXIT;
+
+##Match password to inc.php##
+>>sudo nano /opt/lampp/phpmyadmin/config.inc.php
+    Find this line and change it
+    $cfg['Servers'][$i]['password'] = 'new_secure_password';
+>>sudo /opt/lampp/lampp restart
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##Rechange the changed password##
+    sudo /opt/lampp/bin/mysql -u root -p
+    enter your password
+
+>>ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_secure_password';
+>>FLUSH PRIVILEGES;
+>>EXIT;
+    Change inc.php password
+>>sudo /opt/lampp/lampp restart
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##Installing Php 8.3##
+
+>>sudo apt install php
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##Installing Composer##
+
+    check php –version – requires version 7.8 above to run
+
+    go to composer official site : https://getcomposer.org/download/ click download  find the command
+
+    copy and paste
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+next copy and paste 
+sudo mv composer.phar /usr/local/bin/composer
+
+
+>>verify composer –version
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Installing NodeJs
+
+https://www.youtube.com/watch?v=GfpzxQMfEJA
+https://snapcraft.io/node
+>>sudo snap install node –classic
+>>node –version
+>>npm –version
+
+downgrade node
+>>sudo snap refresh node --channel=20/stable –classic
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Installing nvm 
+https://github.com/nvm-sh/nvm
+go to install & Update Script
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+close terminal and open type nvm –version
+nvm install 22 
+nvm list
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+>>sudo apt-get install php-xml php-dom
+>>sudo yum install php-xml php-dom
+
+>>sudo apt update & sudo aptt upgrade -y
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##Create Laravel Project to /opt/lampp/htdocs/projectname##
+>>sudo composer create-project laravel/laravel first-project
+
+>>cd first-project
+Install VSCODE
+>>code .
+
+note after you make this you need to change the permission:
+
+sudo chown -R web-dev-eirfej:web-dev-eirfej /opt/lampp/htdocs/first-project/
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+setup .env and config > database 
+
+create a database name inside phpmyadmin
+
+>>sudo apt-get install php-mbstring
+>>php artisan migrate
+>>php artisan key:generate
+>>php artisan serve
+>>php artisan --host= ip --port=8???
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
