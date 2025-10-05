@@ -1,0 +1,33 @@
+lrvl cc
+
+-file & folder structure
+-change configuration
+-define routes
+-model & migrations
+-factories & seeders
+-generate controller
+-crud operations
+-layout and views
+-components
+-add registration & login
+-validate date & save
+-sessions
+
+dependencies
+-php
+-mysql
+-NodeJs
+-git bash
+-composer
+-vs code
+    *extensions
+    *php 
+    *laravel blade formatter
+    *laravel blade snippets
+    *laravel extra intellisense
+    *laravel goto view
+    *auto rename tag
+    *highlight matching tag
+    *prettier - code formatter
+    *intellisense for CSS class names in HTML
+    *Tailwind CSS intellisense
