@@ -173,6 +173,28 @@ Enable Storage Link for images (under public path)
  <img src="{{ asset('images/branding/logo.png') }}" height="36">
 
 
+MYSQL ERROR FIX you should use root no pass, 
+
+SELECT user, host FROM mysql.user;
+
+You will likely see something like:
+root | localhost
+root | %
+
+
+CREATE the sail user for Docker (NO PASSWORD)
+CREATE USER 'sail'@'%' IDENTIFIED BY '';
+
+Grant permissions (IMPORTANT)
+GRANT ALL PRIVILEGES ON *.* TO 'sail'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+Verify user now exists
+SELECT user, host FROM mysql.user;
+
+you will see
+sail | %
+
 
 
 
