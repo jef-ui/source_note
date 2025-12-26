@@ -173,7 +173,9 @@ Enable Storage Link for images (under public path)
  <img src="{{ asset('images/branding/logo.png') }}" height="36">
 
 
-MYSQL ERROR FIX you should use root no pass, 
+MYSQL ERROR FIX you should use root no pass,
+
+./vendor/bin/sail exec mysql mysql -u sail -p
 
 SELECT user, host FROM mysql.user;
 
