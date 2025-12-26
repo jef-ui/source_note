@@ -1,5 +1,4 @@
-Installing Docker W & L
-
+##### Installing Docker W & L
 pshell run as admin 
 #-> wsl --install 
 	#-> wsl --install -d ubuntu-22.04 / or no version
@@ -13,55 +12,49 @@ pshell run as admin
 									#-> cd ~ -> mkdir ~/Projectfolder -> cd Projectfolder
 
 
-UBUNTU LINUX HOST:
-
+#### UBUNTU LINUX HOST:
 BEFORE INSTALLING DOCKER
 sudo apt install gnome-terminal
 
-	#sudo apt update
-	#sudo apt install ca-certificates curl gnupg lsb-release -y
+	sudo apt update
+	
+		sudo apt install ca-certificates curl gnupg lsb-release -y
 
-		#sudo mkdir -p /etc/apt/keyrings
-		#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+		sudo mkdir -p /etc/apt/keyrings
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-			#echo \
-			#"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
-			#https://download.docker.com/linux/ubuntu \
-			#$(lsb_release -cs) stable" | \
-			#sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+			echo \
+			"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+			https://download.docker.com/linux/ubuntu \
+			$(lsb_release -cs) stable" | \
+			sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-				#sudo apt update
-				#sudo apt install docker-ce docker-ce-cli containerd.io -y
+				sudo apt update
+				sudo apt install docker-ce docker-ce-cli containerd.io -y
 
-					#sudo apt install ./docker-desktop-amd64.deb
+					sudo apt install ./docker-desktop-amd64.deb
 
-SETTING UP LOG IN
-gpg --generate-key
-sudo apt update
-sudo apt install -y pass gnupg
-gpg --list-secret-keys --keyid-format=long
-sec   ed25519/90E1DE806838952E 2025-12-24 [SC]
-copy the key id 90E1DE806838952E
-pass init 90E1DE806838952E
-Password store initialized
-docker login
+#### SETTING UP LOG IN
+	gpg --generate-key
+		sudo apt update
+			sudo apt install -y pass gnupg
+				gpg --list-secret-keys --keyid-format=long
+					sec   ed25519/90E1DE806838952E 2025-12-24 [SC]
+						copy the key id 90E1DE806838952E
+							pass init 90E1DE806838952E				
+								Password store initialized
+									docker login
 
-
-
- 
-
-Creating Laravel project after installing WSL2 & Docker
-
+#### Creating Laravel project after installing WSL2 & Docker
 
 FIRST PROJECT 3306
 
-#composer create-project Laravel/Laravel projectname#1
-	#composer require Laravel/sail --dev #note this image install if you use a old Laravel
-		#php artisan sail:install -> choose your database (mysql)
-			#code . (open your project)
-				#open .env , don't change anything only the database name after that run to ubuntu terminal
+composer create-project Laravel/Laravel projectname#1
+	composer require Laravel/sail --dev #note this image install if you use a old Laravel
+		php artisan sail:install -> choose your database (mysql)
+			code . (open your project)
+				open .env , don't change anything only the database name after that run to ubuntu terminal
 add:
-
 
 APP_URL=http://localhost:8080
 APP_PORT=8080
@@ -95,24 +88,17 @@ COMPOSE_PROJECT_NAME=ocdmimaropa_ims (for docker logs )
 
 THIRD PROJECT 3308
 
-#composer create-project Laravel/Laravel projectname#2
-#composer require Laravel/sail --dev #note this image install if you use a old Laravel
-#php artisan sail:install -> choose your database (mysql)
-#code . (open your project)
-#open .env , don't change anything only the database name after that run to ubuntu terminal
-add:
-
-
 APP_URL=http://localhost:8082
 APP_PORT=8082
 VITE_PORT=5175
 FORWARD_DB_PORT=3308
 COMPOSE_PROJECT_NAME=ocdmimaropa_ims (for docker logs )
- 
-#./vendor/bin/sail down (always do this on the first installed docker)
-#./vendor/bin/sail up -d (to run your project check docker dashboard)
-#./vendor/bin/sail artisan migrate (first migration to your database mysql)
 
+
+#### .env Setting ChangeOwner Ubuntu
+
+	sudo chown -R user:user /filepath
+ 
 
 explanation:
 
@@ -137,15 +123,6 @@ Docker Engine
 
 
 PLAN TO SCALE LOCAL DEV SETUP . APP 1 - 10 ETC
-
-App (HTTP)
-8080 – 8089
-
-MySQL
-3306 – 3315
-
-VITE
-5173 – 5182
 
 
 MySQL -> show databases; -> use db_name -> show tables; -> describe t_name (show attributes) -> SELECT * FROM t_name;
@@ -173,7 +150,7 @@ Enable Storage Link for images (under public path)
  <img src="{{ asset('images/branding/logo.png') }}" height="36">
 
 
-MYSQL ERROR FIX you should use root no pass,
+####MYSQL ERROR FIX you should use root no pass,
 
 ./vendor/bin/sail exec mysql mysql -u sail -p
 
