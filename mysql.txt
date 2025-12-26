@@ -1,0 +1,31 @@
+
+accessing mysql
+mysql -u root
+mysql -u root -p
+./vendor/bin/sail exec mysql mysql -u root
+./vendor/bin/sail exec mysql mysql -u sail -p
+
+List MySQL Users
+SELECT user, host FROM mysql.user;
+
+Create User with Password
+    CREATE USER 'admin_user'@'%' IDENTIFIED BY 'StrongPassword123!';
+        (note remember the password if not. you must set to grant all privileges before to change it)
+            ALTER USER 'username'@'%' IDENTIFIED BY 'newpassword';
+
+Grant All PRIVILEGES
+GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'%' WITH GRANT OPTION;
+
+Apply Changes
+FLUSH PRIVILEGES;
+
+loginspecificuser
+./vendor/bin/sail exec mysql mysql -u user_name -p
+
+Change the password of main root
+ALTER USER 'root'@'%' IDENTIFIED BY 'VeryStrongRootPassword!';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'VeryStrongRootPassword!';
+FLUSH PRIVILEGES;
+
+
