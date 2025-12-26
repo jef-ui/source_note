@@ -152,6 +152,7 @@ Enable Storage Link for images (under public path)
 
 ####MYSQL ERROR FIX you should use root no pass,
 
+
 ./vendor/bin/sail exec mysql mysql -u sail -p
 
 SELECT user, host FROM mysql.user;

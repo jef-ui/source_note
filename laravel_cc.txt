@@ -31,3 +31,5 @@ dependencies
     *prettier - code formatter
     *intellisense for CSS class names in HTML
     *Tailwind CSS intellisense
+
+    
