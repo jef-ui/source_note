@@ -180,6 +180,7 @@ MYSQL ERROR FIX you should use root no pass,
 SELECT user, host FROM mysql.user;
 
 You will likely see something like:
+
 root | localhost
 root | %
 
