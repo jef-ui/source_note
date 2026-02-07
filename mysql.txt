@@ -28,6 +28,12 @@ ALTER USER 'root'@'%' IDENTIFIED BY 'VeryStrongRootPassword!';
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'VeryStrongRootPassword!';
 FLUSH PRIVILEGES;
 
+DATABASES
+SHOW DATABASES;
+
+TABLE STRUCTURE
+DESCRIBE table_name;
+
 PREVIEW ROW 
 SELECT * FROM dbname WHERE id = 5;
 
