@@ -28,4 +28,9 @@ ALTER USER 'root'@'%' IDENTIFIED BY 'VeryStrongRootPassword!';
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'VeryStrongRootPassword!';
 FLUSH PRIVILEGES;
 
+PREVIEW ROW 
+SELECT * FROM dbname WHERE id = 5;
+
+DELETE ROW 
+DELETE FROM dbname WHERE id = 5;
 
