@@ -1,0 +1,6 @@
+####  BY PASS LOGIN ACCOUNT (RESET/FORMAT)
+
+Shift + f10 / Shift + fn + f10
+ncpa.cpl (disable wireless ethernet and wifi connections)
+oobe\bypassnro
+
