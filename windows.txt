@@ -18,3 +18,5 @@ administrator cmd
             cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
             cscript ospp.vbs /sethst:23.226.136.46
             cscript ospp.vbs /act
+
+#### KVM LCD Switch
