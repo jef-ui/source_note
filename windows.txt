@@ -20,3 +20,6 @@ administrator cmd
             cscript ospp.vbs /act
 
 #### KVM LCD Switch
+8 ports
+
+#### Network Diagram Modem -> router -> switches -> (desktop, laptop, accesspoint, voip) -> switch 
